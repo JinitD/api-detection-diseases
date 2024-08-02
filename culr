@@ -1,0 +1,40 @@
+{
+  "info": {
+    "name": "TensorFlow Image Prediction API",
+    "_postman_id": "b9c9e4b8-7d2d-4d1d-b13e-99a45e05c4e1",
+    "description": "Collection for testing TensorFlow image prediction API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Identify Image",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "image",
+              "type": "file",
+              "src": "/ruta/a/tu/imagen/test-image.jpg",
+              "description": "Image file to be sent for prediction"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/identify",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "identify"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

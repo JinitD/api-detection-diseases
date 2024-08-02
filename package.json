@@ -1,0 +1,18 @@
+{
+  "name": "app-detectiion-node",
+  "version": "1.0.0",
+  "description": "An Express application for detecting and retrieving data from Firestore",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^4.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jimp": "^0.22.12",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "firebase-admin": "^11.10.0"
+  }
+}

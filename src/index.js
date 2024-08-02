@@ -8,7 +8,7 @@ const util = require('./logic/utils')
 
 const app = express();
 app.use(morgan('combined'));
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Lista de orígenes permitidos
 const allowedOrigins = [
@@ -34,7 +34,7 @@ const corsOptions = {
 app.use(cors());
 
 
-const serviceAccount = require('/etc/secrets/serviceAccountKey.json');
+const serviceAccount = process.env.SAK || require('/etc/secrets/serviceAccountKey.json');
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),

@@ -33,9 +33,13 @@ const corsOptions = {
 
 app.use(cors());
 
-
-const serviceAccount = process.env.SAK || require('/etc/secrets/serviceAccountKey.json');
-
+let  serviceAccount;
+try {
+     serviceAccount = JSON.parse(process.env.SAK) || require('/etc/secrets/serviceAccountKey.json');
+  } catch (error) {
+    console.error('Error al parsear la variable de entorno SAK:', error);
+    process.exit(1);
+  }
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
      storageBucket: 'disease-pest-banana.appspot.com'
